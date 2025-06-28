@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { NewsItem } from './NewsItem';
 
-export class News extends Component {
-    articles= [
+{
+  "status": "ok",
+  "totalResults": 27,
+  "articles": [
     {
       "source": {
         "id": "the-wall-street-journal",
@@ -42,9 +42,19 @@ export class News extends Component {
       "title": "Control of Spin Qubits at Near Absolute Zero Could Enable Million Qubit Quantum computers | NextBigFuture.com",
       "description": "Brian WangBrian Wang is a Futurist Thought Leader and a popular Science blogger with 1 million readers per month. His blog Nextbigfuture.com is ranked #1 Science News Blog. It covers many disruptive technology and trends including Space, Robotics, Artificial …",
       "url": "https://www.nextbigfuture.com/2025/06/control-of-spin-qubits-at-near-absolute-zero-could-enable-million-qubit-quantum-computers.html",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2025/06/0627-bc-hinton.jpg",
+      "urlToImage": "https://nextbigfuture.s3.amazonaws.com/uploads/2025/06/spinqubitcmoschip-1024x668.jpeg",
       "publishedAt": "2025-06-27T01:21:35Z",
       "content": "Brian Wang is a Futurist Thought Leader and a popular Science blogger with 1 million readers per month. His blog Nextbigfuture.com is ranked #1 Science News Blog. It covers many disruptive technology… [+593 chars]"
+    },
+    {
+      "source": { "id": "financial-post", "name": "Financial Post" },
+      "author": "Yvonne Lau",
+      "title": "‘Godfather of AI’ warns Canadian companies are adopting the technology too slowly",
+      "description": "Canada risks losing its early advantage in AI because businesses are adopting the technology too slowly, Geoffrey Hinton says. Read more.",
+      "url": "https://financialpost.com/technology/godfather-of-ai-canadian-companies-adopting-technology-slowly",
+      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2025/06/0627-bc-hinton.jpeg",
+      "publishedAt": "2025-06-26T12:55:11Z",
+      "content": "Canada risks losing its early advantage in artificial intelligence because businesses are adopting the technology too slowly, according to Geoffrey Hinton, a Canadian scientist commonly known as the … [+5079 chars]"
     },
     {
       "source": { "id": "gruenderszene", "name": "Gruenderszene" },
@@ -177,34 +187,4 @@ export class News extends Component {
       "content": "Usually, when something starts to rot, it gets pitched in the trash. But Joanne Rodriguez wants to turn the concept of rot on its head by growing fungus on trash to turn it into something better.\r\nWe… [+4229 chars]"
     }
   ]
-   constructor(){
-    super();
-    console.log("Hello I am a constructor from news component");
-    this.state={
-        articles: this.articles,
-        loading:false
-
-    }
-  }
-
-    render() {
-        return (
-            <>
-                <div className="container my-3">
-                    <h2>
-                        InTech- Top Headlines
-                    </h2>
-                    <div className="row">
-                    {this.state.articles.map((element)=>{
-                        return <div className="col-md-3" key= {element.url}>
-                    <NewsItem  title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageUrl={element.urlToImage} newsUrl={element.url} />
-                    </div>
-
-                    })}
-                    </div>
-                </div>
-            </>
-        )
-    }
 }
-export default News;

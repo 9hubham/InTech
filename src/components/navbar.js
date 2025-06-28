@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Proptypes from "prop-types";
 
 export class NavBar extends Component {
   static propTypes = {};
