@@ -2,202 +2,36 @@ import React, { Component } from 'react'
 import { NewsItem } from './NewsItem';
 
 export class News extends Component {
-    articles= [
-    {
-      "source": {
-        "id": "the-wall-street-journal",
-        "name": "The Wall Street Journal"
-      },
-      "author": "Nidhi Subbaraman, Emily Glazer, Sara Randazzo",
-      "title": "Harvard Seeks Corporate Sponsors to Help Fill Government Funding Gap",
-      "description": "Top universities look to big tech and pharmaceutical companies for support after Trump’s cuts to government grants",
-      "url": "https://www.wsj.com/us-news/education/harvard-funding-corporate-sponsors-4ee36388?mod=hp_lead_pos3",
-      "urlToImage": "https://images.wsj.net/im-12577127/social",
-      "publishedAt": "2025-06-27T09:30:00Z",
-      "content": "Harvard University and other top research schools are seeking corporate funders to support their science labs following sweeping cuts to government grants. \r\nThe T.H. Chan School of Public Health at … [+401 chars]"
-    },
-    {
-      "source": { "id": "bloomberg", "name": "Bloomberg" },
-      "author": "Yuan Gao, Dong Cao",
-      "title": "China’s $50 Billion Chip Fund Switches Tack to Fight US Curbs",
-      "description": "China’s main chip investment fund is planning to focus on the country’s key shortcomings in sectors like lithography and semiconductor design software, adjusting its approach to better overcome US efforts to stop its technological advances.",
-      "url": "https://www.bloomberg.com/news/articles/2025-06-27/china-s-50-billion-chip-fund-switches-tack-to-fight-us-curbs",
-      "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQLH39rfjXaE/v1/1200x800.jpg",
-      "publishedAt": "2025-06-27T09:01:13+00:00",
-      "content": "Chinas main chip investment fund is planning to focus on the countrys key shortcomings in sectors like lithography and semiconductor design software, adjusting its approach to better overcome US effo… [+491 chars]"
-    },
-    {
-      "source": { "id": "bloomberg", "name": "Bloomberg" },
-      "author": "Ntando Thukwana, Katlego Mtshali",
-      "title": "South Africa’s Bank Zero, Lesaka to Combine in $61 Million Deal",
-      "description": "South African digital lender Bank Zero Mutual Bank, founded by the former chief of one of the country’s top lenders, is combining with a unit of fintech firm Lesaka Technologies Inc. in a 1.91 billion-rand ($61 million) deal.",
-      "url": "https://www.bloomberg.com/news/articles/2025-06-27/south-africa-s-bank-zero-lesaka-to-combine-in-61-million-deal",
-      "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i0hUEDUvCQeM/v1/1200x800.jpg",
-      "publishedAt": "2025-06-27T08:03:37+00:00",
-      "content": "South African digital lender Bank Zero Mutual Bank, founded by the former chief of one of the countrys top lenders, is combining with a unit of fintech firm Lesaka Technologies Inc. in a 1.91 billion… [+323 chars]"
-    },
-    {
-      "source": { "id": "next-big-future", "name": "Next Big Future" },
-      "author": "Brian Wang",
-      "title": "Control of Spin Qubits at Near Absolute Zero Could Enable Million Qubit Quantum computers | NextBigFuture.com",
-      "description": "Brian WangBrian Wang is a Futurist Thought Leader and a popular Science blogger with 1 million readers per month. His blog Nextbigfuture.com is ranked #1 Science News Blog. It covers many disruptive technology and trends including Space, Robotics, Artificial …",
-      "url": "https://www.nextbigfuture.com/2025/06/control-of-spin-qubits-at-near-absolute-zero-could-enable-million-qubit-quantum-computers.html",
-      "urlToImage": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2025/06/0627-bc-hinton.jpg",
-      "publishedAt": "2025-06-27T01:21:35Z",
-      "content": "Brian Wang is a Futurist Thought Leader and a popular Science blogger with 1 million readers per month. His blog Nextbigfuture.com is ranked #1 Science News Blog. It covers many disruptive technology… [+593 chars]"
-    },
-    {
-      "source": { "id": "gruenderszene", "name": "Gruenderszene" },
-      "author": null,
-      "title": "Keine Deals für Trumps Tech-Bros: Pausder appelliert an EU-Chefin",
-      "description": "Die USA wollen beim EU Digitalgesetz mitreden. Dafür signalisieren sie Bewegung bei den Zölllen. Startupverbände finden diese Idee schlecht.",
-      "url": "https://www.businessinsider.de/gruenderszene/perspektive/keine-deals-fuer-trumps-tech-bros-pausder-appelliert-an-eu-chefin/",
-      "urlToImage": "https://cdn.businessinsider.de/wp-content/uploads/2025/04/68100ca8c6ad288d147f6220-1-scaled.jpg?ver=1745924457",
-      "publishedAt": "2025-06-26T11:05:26+00:00",
-      "content": "Die USA wollen beim EU Digitalgesetz mitreden. Dafür signalisieren sie Bewegung bei den Zölllen. Startupverbände werfen ein: Das Gesetz sei zu wichtig um damit zu dealen.Nicht weich werden, Kante zei… [+3933 chars]"
-    },
-    {
-      "source": { "id": "gruenderszene", "name": "Gruenderszene" },
-      "author": null,
-      "title": "Space-Tech: Nicht Mondfahrten, sondern nationale Sicherheit",
-      "description": "Chefs von Isar Aerospace, The Exploration Company, Constellr und Investor Lakestar diskutieren über die Bedeutung von Space-Tech.",
-      "url": "https://www.businessinsider.de/gruenderszene/technologie/space-tech-nicht-mondfahrten-sondern-nationale-sicherheit/",
-      "urlToImage": "https://cdn.businessinsider.de/wp-content/uploads/2025/06/Schnelle-Aufmacher-17.jpg?ver=1750884722",
-      "publishedAt": "2025-06-26T09:48:24+00:00",
-      "content": "Die Wiederwahl von Donald Trump zum US-Präsidenten hat nicht nur die Welt, sondern auch den Weltraum verändert. Vor November 2024 war Space Tech in Europa vor allem eine glamouröse Art von Logistik. … [+414 chars]"
-    },
-    {
-      "source": { "id": "le-monde", "name": "Le Monde" },
-      "author": "Vincent Fagot",
-      "title": "En quête de rentabilité, la French tech peine à lever des fonds",
-      "description": "La « start-up nation » chère à Emmanuel Macron cherche à diversifier ses financements, alors que les levées de fonds dont elles bénéficient sont en chute libre depuis 2022.",
-      "url": "https://www.lemonde.fr/economie/article/2025/06/26/en-quete-de-rentabilite-la-french-tech-peine-a-lever-des-fonds_6615964_3234.html",
-      "urlToImage": "https://img.lemde.fr/2025/06/25/0/0/4000/2666/1440/960/60/0/1bbb9bf_upload-1-l0jjknzpmtoa-maxnewsworldsix646811.jpg",
-      "publishedAt": "2025-06-26T08:00:09Z",
-      "content": "Au stand de la French tech, au salon VivaTech, porte de Versailles, à Paris, le 13 juin 2025. JULIEN MATTIA/LE PICTORIUM/MAXPPP\r\nPour démontrer quelle est lune des places qui compte sur léchiquier mo… [+1474 chars]"
-    },
-    {
-      "source": { "id": "gruenderszene", "name": "Gruenderszene" },
-      "author": null,
-      "title": "Fintech für Seefahrer: Zwei Berliner starten verrückte Idee, jetzt Millionen-Exit",
-      "description": "Sasha Makarovych und Justus Schmueser haben mit Kadmos eine digitale Zahlungsplattform für Seefahrer geschaffen.",
-      "url": "https://www.businessinsider.de/gruenderszene/fintech/fintech-fuer-seefahrer-zwei-berliner-starten-verrueckte-idee-jetzt-millionen-exit/",
-      "urlToImage": "https://cdn.businessinsider.de/wp-content/uploads/2025/06/Schnelle-Aufmacher-16.jpg?ver=1750750554",
-      "publishedAt": "2025-06-25T09:24:34+00:00",
-      "content": "Es hätte näherliegende Ideen gegeben für die beiden Freunde aus dem Studium, die zu Beginn von Corona dachten: Jetzt gründen das wäre gut.\r\nGeworden ist es das erste Fintech Deutschlands, das sich au… [+1025 chars]"
-    },
-    {
-      "source": { "id": "wired", "name": "Wired" },
-      "author": "Wired",
-      "title": "The Tech-Fueled Resistance to Trump",
-      "description": "",
-      "url": "https://www.wired.com/visual-story/technology-tools-donald-trump-resistance/",
-      "urlToImage": "https://media.wired.com/photos/6850ab6d50868307ecf24ca5/191:100/w_1280,c_limit/3.png",
-      "publishedAt": "2025-06-17T10:22:42.4121864Z",
-      "content": null
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Lauren Forristal",
-      "title": "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
-      "description": "Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI Research company Altera raised $9 million to build AI agents that can play video games alongside other player…",
-      "url": "https://techcrunch.com/2024/05/08/bye-bye-bots-alteras-game-playing-ai-agents-get-backing-from-eric-schmidt/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/Minecraft-keyart.jpg?resize=1200,720",
-      "publishedAt": "2024-05-08T15:14:57Z",
-      "content": "Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI agents.\r\nThe company announced Wednesday that it … [+6416 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Alex Wilhelm and Theresa Loconsolo",
-      "title": "$450M for Noname, two billion-dollar rounds, and good news for crypto startups | TechCrunch",
-      "description": "This morning on Equity, not only do we have good news for crypto founders, we're also digging into Akamai spending $450 million for API security firm Noname, and billion dollar deals from Wiz and Wayve.",
-      "url": "https://techcrunch.com/2024/05/08/450m-for-noname-two-billion-dollar-rounds-and-good-news-for-crypto-startups/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2023/07/GettyImages-942480316.jpg?resize=1200,835",
-      "publishedAt": "2024-05-08T15:01:51Z",
-      "content": "Good news, crypto founders: Venture capital activity is picking up in your sector after falling to multi-year lows in late 2023. Put another way, venture folks appear more web3-bullish than before, e… [+1599 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Rebecca Bellan",
-      "title": "Uber promises member exclusives as Uber One passes $1B run-rate | TechCrunch",
-      "description": "Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions.  “You will see",
-      "url": "https://techcrunch.com/2024/05/08/uber-promises-member-exclusives-as-uber-one-passes-1b-run-rate/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1142304853-a.jpg?resize=1200,675",
-      "publishedAt": "2024-05-08T14:41:36Z",
-      "content": "Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions. \r\nYou will see more member-exclusives coming up where members … [+4676 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Mike Butcher",
-      "title": "Checkfirst raises $1.5M pre-seed, applying AI to remote inspections and audits | TechCrunch",
-      "description": "Checkfirst enables businesses to schedule inspectors based on geographical location and qualifications, in addition to allowing for remote inspections.",
-      "url": "https://techcrunch.com/2024/05/08/checkfirst-raises-1-5m-pre-seed-applying-ai-to-remote-inspections-and-audits/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/Checkfirst-team.jpg?w=960",
-      "publishedAt": "2024-05-08T13:02:12Z",
-      "content": "Weve all seen them. The inspector with a clipboard, walking around a building, ticking off the last time the fire extinguishers were checked, or if all the lights are working. They work in the TICC (… [+3279 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Paul Sawers",
-      "title": "UK challenger bank Monzo nabs another $190M as US expansion beckons | TechCrunch",
-      "description": "Monzo has raised another $190 million, as the challenger bank looks to expand its presence internationally — particularly in the U.S.",
-      "url": "https://techcrunch.com/2024/05/08/uk-challenger-bank-monzo-nabs-another-190m-at-5-2b-valuation/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1259121938-e1715164252704.jpg?resize=1200,676",
-      "publishedAt": "2024-05-08T12:34:05Z",
-      "content": "Monzo has raised another £150 million ($190 million), as the challenger bank looks to expand its presence internationally particularly in the U.S.\r\nThe new round comes just two months after Monzo rai… [+1960 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Brian Heater",
-      "title": "iRobot names former Timex head Gary Cohen as CEO | TechCrunch",
-      "description": "iRobot Tuesday announced the successor to longtime CEO, Colin Angle. Gary Cohen, who previous held chief executive role at Timex and Qualitor Automotive,",
-      "url": "https://techcrunch.com/2024/05/08/irobot-names-former-timex-head-gary-cohen-as-ceo/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/Screenshot-2024-05-08-at-7.19.50 AM.jpg?resize=1200,919",
-      "publishedAt": "2024-05-08T12:22:30Z",
-      "content": "iRobot Tuesday announced the successor to longtime CEO, Colin Angle. Gary Cohen, who previous held chief executive role at Timex and Qualitor Automotive, will be heading up the company, marking a maj… [+2120 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Devin Coldewey",
-      "title": "Google Deepmind debuts huge AlphaFold update and free proteomics-as-a-service web app | TechCrunch",
-      "description": "Google Deepmind has taken the wraps off a new version AlphaFold, their transformative machine learning model that predicts the shape and behavior of",
-      "url": "https://techcrunch.com/2024/05/08/google-deepmind-debuts-huge-alphafold-update-and-free-proteomics-as-a-service-web-app/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/alphafold-3-deepmind.jpg?resize=1200,675",
-      "publishedAt": "2024-05-07T22:10:14Z",
-      "content": "Google Deepmind has taken the wraps off a new version AlphaFold, their transformative machine learning model that predicts the shape and behavior of proteins. AlphaFold 3 is not only more accurate, b… [+7069 chars]"
-    },
-    {
-      "source": { "id": "techcrunch", "name": "TechCrunch" },
-      "author": "Tim De Chant",
-      "title": "Mycocycle uses mushrooms to upcycle old tires and construction waste | TechCrunch",
-      "description": "The startup's fungi use their mycelium to consume oil-based rubbers and plastics, creating new bio-based materials in the process.",
-      "url": "https://techcrunch.com/2024/05/08/mycocycle-uses-mushrooms-to-upcycle-old-tires-and-construction-waste/",
-      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1350655821.jpeg?resize=1200,796",
-      "publishedAt": "2024-05-07T18:07:09Z",
-      "content": "Usually, when something starts to rot, it gets pitched in the trash. But Joanne Rodriguez wants to turn the concept of rot on its head by growing fungus on trash to turn it into something better.\r\nWe… [+4229 chars]"
-    }
-  ]
+    
    constructor(){
     super();
     console.log("Hello I am a constructor from news component");
     this.state={
-        articles: this.articles,
+        articles: [],
         loading:false
 
     }
+  }
+ async componentDidMount(){
+    console.log("cdm");
+    let url ="https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=2ae729cff65846edbc4e8016d45e3b99"
+    let data = await fetch(url);
+    let parsedData = await data.json()
+    console.log(parsedData);
+    this.setState({articles:parsedData.articles})
   }
 
     render() {
         return (
             <>
                 <div className="container my-3">
-                    <h2>
+                    <h1>
                         InTech- Top Headlines
-                    </h2>
+                    </h1>
                     <div className="row">
                     {this.state.articles.map((element)=>{
                         return <div className="col-md-3" key= {element.url}>
-                    <NewsItem  title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageUrl={element.urlToImage} newsUrl={element.url} />
+                    <NewsItem  title={element.title?element.title.slice(0,45):""} description={element.description?element.description.slice(0,88):""} imageUrl={element.urlToImage?element.urlToImage:"https://manalco.com/wp-content/uploads/2023/04/no-image.jpg"} newsUrl={element.url} />
                     </div>
 
                     })}
