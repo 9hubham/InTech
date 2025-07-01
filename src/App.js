@@ -2,8 +2,8 @@ import "./App.css";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/navbar";
-import News from "./components/news";
-import Home from "./components/Home";
+ import News from "./components/news";
+// import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
